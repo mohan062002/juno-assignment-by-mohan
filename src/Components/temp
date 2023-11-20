@@ -1,0 +1,42 @@
+// ... Previous code remains unchanged ...
+
+const MyTable = () => {
+  // Function to map risk levels to corresponding styles
+  const getRiskLevelStyle = (riskLevel) => {
+    switch (riskLevel) {
+      case 'Low':
+        return { color: 'green' }; // Example style for Low risk level
+      case 'Medium':
+        return { color: 'orange' }; // Example style for Medium risk level
+      case 'High':
+        return { color: 'red', fontWeight: 'bold' }; // Example style for High risk level
+      default:
+        return {}; // Default style
+    }
+  };
+
+  return (
+    <table className="w-full text-sm text-left rtl:text-right text-gray-500">
+      {/* ... Table structure remains the same ... */}
+      <tbody>
+        {data.map((item, index) => (
+          <tr key={index} className="bg-white border-b h-[72px]">
+            {/* ... Other cells remain the same ... */}
+            <td className="px-6 py-4">
+              <div className="flex items-center">
+                <div
+                  className="w-3 h-3 rounded-full mr-2"
+                  style={getRiskLevelStyle(item.riskLevel)}
+                ></div>
+                <p style={getRiskLevelStyle(item.riskLevel)}>{item.riskLevel}</p>
+              </div>
+            </td>
+            {/* ... Other cells remain the same ... */}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+};
+
+export default MyTable;

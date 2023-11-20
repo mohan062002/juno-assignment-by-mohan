@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Mainbar from "./Components/Mainbar";
+import Sidebar from "./Components/Sidebar";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex ">
+      <div className="w-[258px]  max-h-full border-r-4 border-opacity-50 border-gray-300">
+        <Sidebar />
+      </div>
+      <div className="h-screen w-full">
+        <Mainbar />
+      </div>
     </div>
   );
 }
-
-export default App;
